@@ -21,6 +21,6 @@ urlpatterns = [
     path('donationItem_create/', views.donationItems_create,name='create_donationItems'),
     path('donationItems_edit/<int:DonationItems_id>', views.donationItems_edit,name='edit_donationItems'),
     
-    path('result/<str:item_type>',views.TagSearch,name='search')
+    path('search/',views.TagSearch,name='search')
 ]
 

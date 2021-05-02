@@ -6,6 +6,12 @@
 <h1>Search</h1>
 
 <div class="row lg-9 mt-3" >
+
+{% for item in Dt %}
+<p >{{ item.DonationType }}</p>
+<a href="{% url 'search' item.id %}">{{ item.DonationType }}</a>
+{% endfor %}
+
   {% for item in Dt %}
   
   <div class=" col-lg-4">
