@@ -1,0 +1,26 @@
+ {% extends 'store/main.html' %}
+  
+ {% block content  %}
+   <p> doner details</p>
+   <table class="table" id="table">
+   <tr>
+   
+    <th>donrName</th>
+    <th >donrAddress</th>
+    <th>donrMobile</th>
+    <th>donrtype</th>
+    <th colspan="2">actions</th>
+  </tr>
+  
+
+  <tr>
+    <td>{{items.donrName}}</td>
+    <td>{{items.donrAddress}}</td>
+    <td>{{items.donrMobile}}</td>
+    <td>{{items.donrtype}}</td> 
+    <td>xxx</td>
+  </tr>
+
+
+</table>
+ {% endblock  %}

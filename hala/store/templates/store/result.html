@@ -1,0 +1,49 @@
+ {% extends 'store/main.html' %}
+ {% load  static %}
+
+    
+{% block content  %}
+<h1>Search</h1>
+
+<div class="row lg-9 mt-3" >
+  {% for item in Dt %}
+  
+  <div class=" col-lg-4">
+
+<div class="card" style="width: 18rem; ">
+  <img class="card-img-top" src= "{% static 'images/sos.png'%}">
+  <div class="card-body">
+    <h5 class="card-title  align-content-center">{{ item.ditmDescription }}</h5>
+    <p class="card-text">{{ item.ditmType }} | {{ item.ditmStatus }}</p>
+    <p class="card-text">({{ item.ditmQuantity }}) 
+    
+    <form class="form-inline my-2 my-lg-0" method="POST" >
+      {% csrf_token %}
+       <input type="hidden" name="itm"  value= {{ item.id }}  >
+      <input type='submit' value ='اضافةطلب' class='btn btn-success' />
+    </form>
+    
+    
+    
+     
+    
+    
+  </div >
+</div>
+
+
+  </div>    
+  {% endfor %}
+
+</div>
+
+
+
+<ul class="pagination">
+  <li><a href="#">1</a></li>
+  <li class="active"><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+</ul>
+ {% endblock  %}

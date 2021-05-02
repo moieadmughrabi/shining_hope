@@ -1,0 +1,16 @@
+ {% extends 'store/main.html' %}
+ 
+ {% block content  %}
+   <div class="container" > 
+   <div class="form-group" > 
+   
+   <p> Create Donation Item</p>
+   <form  method="POST">
+      {% csrf_token %}
+      {{form.as_p}} 
+      
+      <input type='submit' name ='submit' class='btn btn-success' />
+   </form>
+   </div>
+   </div>
+ {% endblock  %}

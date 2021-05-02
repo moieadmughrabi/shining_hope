@@ -1,0 +1,10 @@
+ {% extends 'store/main.html' %}
+ {% block content  %}
+   <p> Login</p>
+   <form  method="POST">
+      {% csrf_token %}
+      {{form.as_p}} 
+      <h1>hey world</h1>
+      <input type='submit' value ='Login'/>
+   </form>
+ {% endblock  %}

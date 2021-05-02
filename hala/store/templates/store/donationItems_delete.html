@@ -1,0 +1,22 @@
+ {% extends 'store/main.html' %}
+  
+ {% block content  %}
+ 
+  <p>   DonationItems Delete</p>
+ 
+   <form  method="POST">
+      {% csrf_token %}
+      are you sure to delete ?
+      
+      <input type='submit' name ='submit'/>
+   </form>
+
+    <td>{{item.ditmType}}</td>
+    <td>{{item.ditmDescription}}</td>
+    <td>{{item.ditmQuantity}}</td>
+    <td>{{item.ditmStatus}}</td> 
+    <td>{{item.ditmDoner}}</td
+ 
+
+
+ {% endblock  %}

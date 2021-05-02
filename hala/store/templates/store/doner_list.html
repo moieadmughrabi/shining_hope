@@ -1,0 +1,30 @@
+ {% extends 'store/main.html' %}
+ {% load  static %}
+ 
+ <link rel="stylesheet" href={% static "/css/main.css" %}>
+ 
+ {% block content  %}
+   <p> Doners List</p>
+   <table class="table table-striped " id="table">
+   <tr>
+   
+    <th>donrName</th>
+    <th >donrAddress</th>
+    <th>donrMobile</th>
+    <th>donrtype</th>
+    <th colspan="2">actions</th>
+  </tr>
+   {% for item in items %}
+    <tr> 
+   <td>{{item.donrName}}</td>
+    <td>{{item.donrAddress}}</td>
+    <td>{{item.donrMobile}}</td>
+    <td>{{item.donrtype}}</td> 
+    <td> <a href="{% url 'details_doner' item.id %}"> details</a> |
+    <a href="{% url 'edit_doner' item.id %}"> Edit</a> | 
+    <a href="{% url 'delete_doner' item.id %}"> Delete</a></td>
+ </tr>
+
+{% endfor %}
+</table>
+ {% endblock  %}

@@ -1,0 +1,34 @@
+ {% extends 'articles/main.html' %}
+  
+ {% block content  %}
+   <p> Employees Delete</p>
+   <table class="table" id="table">
+   <tr>
+   
+    <th>cusName</th>
+    <th >cusLastname</th>
+    <th>cusphone</th>
+    <th>dep</th>
+    <th colspan="2">actions</th>
+  </tr>
+    <tr>
+    <td>{{emp.cusName}}</td>
+    <td>{{emp.cusLastname}}</td>
+    <td>{{emp.cusphone}}</td>
+    <td>{{emp.dep}}</td>
+    <td>xxx</td>
+  </tr>
+
+
+</table>
+
+<p> Delete Employee</p>
+   <form  method="POST">
+      {% csrf_token %}
+      are you sure to delete ?
+      <a href="{% url 'employee_list'  %}" >Cancel</a>
+      <input type='submit' name ='submit'/>
+   </form>
+
+
+ {% endblock  %}

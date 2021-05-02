@@ -1,0 +1,32 @@
+ {% extends 'store/main.html' %}
+  {% load  static %}
+ {% block content  %}
+ <style>
+ img{
+     width:40px;
+     height:40px;
+ }
+ </style>
+   <p> DonationItems details</p>
+    <table class="table table-striped" id="table">
+   <tr>
+   
+    <th>ditmDescription</th>
+    <th >ditmType</th>
+    <th>ditmStatus</th>
+    <th>ditmQuantity</th>
+    <th>image</th>
+    
+  </tr>
+   
+    <tr> 
+   <td>{{item.ditmDescription}}</td>
+    <td>{{item.ditmType}}</td>
+    <td>{{item.ditmStatus}}</td>
+    <td>{{item.ditmQuantity}}</td> 
+    <td><img src= "{% static 'images/sos.png'%}" ></td>
+ </tr>
+
+
+</table>
+ {% endblock  %}

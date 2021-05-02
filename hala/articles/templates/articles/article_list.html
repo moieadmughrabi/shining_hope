@@ -1,0 +1,29 @@
+ {% extends 'articles/main.html' %}
+ {% load  static %}
+ 
+  {% block content  %}
+   <p> Employees</p>
+   <table class="table table-striped" id="table">
+   <tr>
+   
+    <th>cusName</th>
+    <th >cusLastname</th>
+    <th>cusphone</th>
+    <th>dep</th>
+    <th colspan="2">actions</th>
+  </tr>
+   {% for emp in emps %}
+
+  <tr>
+    <td>{{emp.cusName}}</td>
+    <td>{{emp.cusLastname}}</td>
+    <td>{{emp.cusphone}}</td>
+    <td>{{emp.dep}}</td>
+    <td> <a href="{% url 'employee_details' emp.id %}"> details</a> |
+    <a href="{% url 'employee_update' emp.id %}"> Edit</a> | 
+    <a href="{% url 'employee_delete' emp.id %}"> Delete</a></td>
+  </tr>
+ 
+{% endfor %}
+</table>
+ {% endblock  %}

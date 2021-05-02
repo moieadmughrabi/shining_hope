@@ -1,0 +1,62 @@
+ {% extends 'articles/main.html' %}
+ {% load  static %}
+  
+ 
+ {% block content  %}
+  <style>
+ img{
+     width:40px;
+     height:40px;
+ }
+ </style>
+ <p> DonationItems List</p>
+  <a href="{% url 'create_donationItems'  %}"> Add Donation</a> | 
+   <table class="table table-striped" id="table">
+   <tr>
+   
+    <th>ditmDescription</th>
+    <th >ditmType</th>
+    <th>ditmStatus</th>
+    <th>ditmQuantity</th>
+    <th>image</th>
+    <th colspan="2">actions</th>
+  </tr>
+   {% for item in items %}
+    <tr> 
+   <td>{{item.ditmDescription}}</td>
+    <td>{{item.ditmType}}</td>
+    <td>{{item.ditmStatus}}</td>
+    <td>{{item.ditmQuantity}}</td> 
+    <td><img src= "{% static 'images/sos.jpg'%}" ></td>
+    <td> <a href="{% url 'details_DonationItems' item.id %}"> details</a> |
+    <a href="{% url 'edit_donationItems' item.id %}"> Edit</a> | 
+    <a href="{% url 'delete_donationItems' item.id %}"> Delete</a></td>
+    
+    
+ </tr>
+
+{% endfor %}
+</table>
+<ul calss="paginations">
+
+{% if items.has_previous %}
+ <a href='?page={{items.previous_page_number}}'> previous </a> 
+
+{% endif %}
+
+{% for i in items.paginator.page_range %}
+   <li calss="btn bn-success"> <a calss="page-link" href='?page={{i}}'> {{i}} </a> </li>
+{% endfor %}
+
+{% if items.has_next %}
+<li calss="btn">
+  <a calss="btn" href='?page={{items.next_page_number}}'> next </a> 
+</li>     
+
+{% endif %}
+
+</ul>
+
+
+
+ {% endblock  %}

@@ -1,0 +1,16 @@
+{% extends 'articles/main.html' %}
+  
+ {% block content  %}
+ <p> Create Department</p>
+   <div class="container" > 
+   <div class="form-group" > 
+   <form  method="POST">
+      {% csrf_token %}
+      {{ form.as_p}} 
+      
+      <input type='submit' value ='Edit' class="btn btn-success" />
+   </form>
+   </div>
+   </div>
+
+ {% endblock  %}

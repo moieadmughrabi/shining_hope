@@ -1,0 +1,29 @@
+ {% extends 'articles/main.html' %}
+  
+ {% block content  %}
+   <p> Doner Delete</p>
+ <p> Delete doner</p>
+   <form  method="POST">
+      {% csrf_token %}
+      are you sure to delete ?
+      
+      <input type='submit' name ='submit'/>
+   </form>
+<table class="table" id="table">
+   <tr>
+   
+    <th>donrName</th>
+    <th >donrAddress</th>
+    <th>donrMobile</th>
+    <th>donrtype</th>
+    <th colspan="2">actions</th>
+  </tr>
+  <tr>
+    <td>{{items.donrName}}</td>
+    <td>{{items.donrAddress}}</td>
+    <td>{{items.donrMobile}}</td>
+    <td>{{items.donrtype}}</td> 
+   
+  </tr
+</table>
+ {% endblock  %}

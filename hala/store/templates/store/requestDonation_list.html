@@ -1,0 +1,27 @@
+ {% extends 'store/main.html' %}
+ {% load  static %}
+ <!--add to chart page-->
+ <link rel="stylesheet" href={% static "/css/main.css" %}>
+ {% block content  %}
+   <p> requestDonation_list List</p>
+   <table class="table table-striped" id="table">
+   <tr>
+   
+    <th>donationItem</th>
+    <th >RequestDonationStatus</th>
+    <th>RequestDonation</th>
+    
+    
+  </tr>
+   {% for item in items %}
+    <tr> 
+   <td>{{item.donationItem}}</td>
+    <td>{{item.RequestDonationStatus}}</td>
+    <td>{{item.RequestDonation}}</td>
+    
+    
+ </tr>
+
+{% endfor %}
+</table>
+ {% endblock  %}
