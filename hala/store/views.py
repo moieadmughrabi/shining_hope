@@ -160,4 +160,5 @@ def TagSearch(request,item_type):
    Dt=DonationTypes.objects.get(id=item_type)
     
    return render(request,'result.html',{"Dt":Dt})
+   
  
