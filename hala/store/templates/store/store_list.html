@@ -5,7 +5,14 @@
  {% block content  %}
    
   <h1>list</h1>
+<div>
 
+{% for item in Dt %}
+<p >{{ item.DonationType }}</p>
+<a href="{% url 'search' item.id %}">{{ item.DonationType }}</a>
+{% endfor %}
+
+</div>
     
 
 <div class="row lg-9 mt-3" >
@@ -37,7 +44,7 @@
 
   </div>    
   {% endfor %}
-
+ 
 </div>
 
 

@@ -52,9 +52,11 @@ def store_list(request):
                     don_item_obj.ditmStatus= DonationItemStatus.objects.get(id=0)
                 don_item_obj.save()
             
-  
+    
     items=DonationItems.objects.all()
-    return render (request,'store/store_list.html',{'items':items})
+   
+    Dt=DonationTypes.objects.all()
+    return render (request,'store/store_list.html',{'items':items,'Dt':Dt})
 
 '''--------------------------------'''
 @notLoggedUsers
@@ -156,9 +158,9 @@ def doner_delete(request,doner_id):
 
 
 
-def TagSearch(request,item_type):
-   Dt=DonationTypes.objects.get(id=item_type)
+def TagSearch(request):
+   Dt=DonationItems.objects.all()
     
-   return render(request,'result.html',{"Dt":Dt})
+   return render(request,'search.html',{'Dt':Dt})
    
  
